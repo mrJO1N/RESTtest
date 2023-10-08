@@ -31,11 +31,11 @@ type defaultPathDirI = {
 };
 
 export class PathDir {
-  private specialAliaces: spAliacesI = {};
+  private specialAliaces: spAliacesI;
   private pagesPath = "/pages";
   private pagePath = "/home";
   private filePath = "/index.html";
-  private generalFrontDirPath = "";
+  private generalFrontDirPath;
 
   /**
    *
