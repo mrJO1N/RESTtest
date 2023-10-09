@@ -3,7 +3,7 @@
 start of project
 ================================
 
-0.5.2 - 08.10.2023 = decoration update
+0.5.2 - 08.10.2023    "decoration update"
 
 start a updates journal and some documentation
 added .bat files for people who do not know node.js

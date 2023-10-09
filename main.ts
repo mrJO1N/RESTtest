@@ -20,7 +20,6 @@ createServer((req, res) => {
     c("api");
     res.end();
     return;
-  } else {
   }
   const filePath = pathDir.getFilePath(req.url);
 
