@@ -8,7 +8,7 @@ export class DBMS {
 
   constructor(usersJsonPath: string) {
     readFile(usersJsonPath)
-      .then((data) => (this.users = data))
+      .then((data) => (this.users = JSON.parse(data, "utf-8")))
       .catch((err) => error(err));
   }
 
