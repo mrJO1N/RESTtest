@@ -7,11 +7,9 @@ const HOSTNAME = process.env.HOSTNAME ?? "localhost", PORT = process.env.PORT ??
 c("========================================");
 createServer((req, res) => {
     if (req.url?.slice(2, 5) === "api") {
-        c("");
+        c("api");
         res.end();
         return;
-    }
-    else {
     }
     const filePath = pathDir.getFilePath(req.url);
     readFile(filePath)

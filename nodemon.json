@@ -2,5 +2,5 @@
   "watch": ["./"],
   "ext": ".ts",
   "ignore": [],
-  "exec": "npm run build && npm run start"
+  "exec": "npm run build && node ./js/forTestFuncs.js"
 }
