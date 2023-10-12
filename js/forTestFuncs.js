@@ -1,5 +1,4 @@
-import { c } from "./modules/axuality.js";
 import { db } from "./modules/pg.js";
 db.connect();
-db.query("SELECT NOW()").then((data) => c(data));
-db.end();
+const responce = await db.query("SELECT * FROM public.tablee LIMIT 100");
+console.table(responce.rows);

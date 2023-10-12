@@ -9,3 +9,9 @@ start a updates journal and some documentation
 added .bat files for people who do not know node.js
 
 ================================
+
+0.6.1 - 12.10.2023    "postgresQl"
+
+add postgres module at ./modules/pg.ts
+
+================================

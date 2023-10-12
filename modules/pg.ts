@@ -1,10 +1,10 @@
-import * as pg from "pg";
-const { Client } = pg;
+import pkg from "pg";
+const { Client } = pkg;
 
 export const db = new Client({
-  host: "localhost",
-  port: 5432,
-  database: "test-node",
-  user: "cool12356790",
-  password: "cool12356790",
+  host: process.env.PG_HOST,
+  port: Number(process.env.PG_PORT),
+  database: "node_test",
+  user: process.env.PG_USER,
+  password: process.env.PG_PASSWOR,
 });
