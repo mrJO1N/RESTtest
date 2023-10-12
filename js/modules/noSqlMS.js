@@ -1,7 +1,6 @@
 import { readFileSync } from "./patchOfFuncs.js";
 export class DBMS {
     users = {};
-    private;
     constructor(usersJsonPath) {
         this.users = JSON.parse(readFileSync(`./db/${usersJsonPath}.json`).toString());
     }
@@ -10,7 +9,7 @@ export class DBMS {
         return this.users[id];
     }
     generateIdForUser() {
-        return;
+        return "";
     }
     newUser(settingsObj) {
         if (settingsObj.id == undefined)

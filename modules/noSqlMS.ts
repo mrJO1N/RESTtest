@@ -5,7 +5,6 @@ type usersT = { [key: string]: object };
 
 export class DBMS {
   private users: usersT = {};
-  private;
 
   constructor(usersJsonPath: string) {
     this.users = JSON.parse(
@@ -21,7 +20,7 @@ export class DBMS {
   }
 
   private generateIdForUser() {
-    return;
+    return "";
   }
 
   public newUser(settingsObj: settingsObjT) {
