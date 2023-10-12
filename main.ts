@@ -25,10 +25,12 @@ createServer((req, res) => {
 
   readFile(filePath)
     .then((data) => {
+      c(req.url);
       res.writeHead(200, { "Content-Type": extToCT[extname(filePath)] });
       res.end(data);
     })
     .catch((err) => {
+      error(err);
       error(err);
       res.statusCode = 404;
       res.end();

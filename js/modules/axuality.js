@@ -6,7 +6,7 @@ export const c = (...text) => console.log(blue(...text)), error = (...text) => c
 export const extToCT = {
     ".html": "text/html",
     ".js": "text/javascript",
-    ".css": "style/css",
+    ".css": "text/css",
     ".ico": "image/x-icon",
 };
 export class PathDir {
@@ -44,6 +44,7 @@ export class PathDir {
                     }
                 }
         }
+        warning(`getf: ${url} | ${this.pagePath} | ${this.filePath}\n`);
         return `./${this.pagesPath}${this.pagePath}${this.filePath}`;
     }
 }

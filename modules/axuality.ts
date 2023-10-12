@@ -13,7 +13,7 @@ export const c = (...text: any) => console.log(blue(...text)),
 export const extToCT: extToCTI = {
   ".html": "text/html",
   ".js": "text/javascript",
-  ".css": "style/css",
+  ".css": "text/css",
   ".ico": "image/x-icon",
 };
 
@@ -98,7 +98,7 @@ export class PathDir {
         }
     }
 
-    // warning(`getf: ${url} | ${this.pagePath} | ${this.filePath}`);
+    warning(`getf: ${url} | ${this.pagePath} | ${this.filePath}\n`);
     return `./${this.pagesPath}${this.pagePath}${this.filePath}`;
   }
 }
