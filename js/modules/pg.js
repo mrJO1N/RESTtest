@@ -1,9 +1,9 @@
 import pkg from "pg";
 const { Client } = pkg;
 export const db = new Client({
-    host: "localhost",
-    port: 5432,
+    host: process.env.PG_HOST,
+    port: Number(process.env.PG_PORT),
     database: "node_test",
-    user: "postgres",
-    password: "cool12356790",
+    user: process.env.PG_USER,
+    password: process.env.PG_PASSWOR,
 });

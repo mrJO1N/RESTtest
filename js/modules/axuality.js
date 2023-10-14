@@ -1,4 +1,3 @@
-import { extname } from "path";
 import { readFileSync } from "fs";
 import chalk from "chalk";
 const { red, blue, yellow } = chalk;
@@ -34,17 +33,17 @@ export class PathDir {
             case "/;":
                 this.setAsDefault({ pagePath: "/admin" });
                 break;
+            case undefined:
+                error("getFile: url is undefined");
+                break;
             default:
-                if (url !== "/") {
-                    if (extname(url ?? "/") === "") {
-                        this.setAsDefault({ pagePath: url });
-                    }
-                    else {
-                        this.filePath = url ?? this.filePath;
-                    }
+                if (url?.match(".")) {
+                    this.setAsDefault({ pagePath: url });
+                }
+                else {
+                    this.filePath = url ?? this.filePath;
                 }
         }
-        warning(`getf: ${url} | ${this.pagePath} | ${this.filePath}\n`);
         return `./${this.pagesPath}${this.pagePath}${this.filePath}`;
     }
 }

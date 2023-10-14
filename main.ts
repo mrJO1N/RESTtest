@@ -1,3 +1,4 @@
+// import { getJson } from "./modules/RESTapi.js";
 import { c, error, extToCT, PathDir } from "./modules/axuality.js";
 import { readFile } from "./modules/patchOfFuncs.js";
 // import { api } from "./modules/RESTAPI.js";
@@ -18,6 +19,7 @@ c("========================================");
 createServer((req, res) => {
   if (req.url?.slice(2, 5) === "api") {
     c("api");
+    // console.table(getJson(req));
     res.end();
     return;
   }
