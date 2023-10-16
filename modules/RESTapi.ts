@@ -26,6 +26,4 @@ class ClientApi {
   }
 }
 
-export const api = {
-  client: new ClientApi(),
-};
+export const api = new ClientApi();

@@ -1,9 +1,12 @@
 // import { getJson } from "./modules/RESTapi.js";
-import { c, error, extToCT, PathDir } from "./modules/axuality.js";
+import { api } from "./modules/RESTapi.js";
+import { c, error, extToCT, PathDir, warning } from "./modules/axuality.js";
 import { readFile } from "./modules/patchOfFuncs.js";
 // import { api } from "./modules/RESTAPI.js";
 import { createServer } from "http";
 import { extname } from "path";
+
+// require("dotenv").config();
 
 const pathDir = new PathDir(
   "general-front",
@@ -12,14 +15,20 @@ const pathDir = new PathDir(
 );
 
 const HOSTNAME = process.env.HOSTNAME ?? "localhost",
-  PORT = process.env.PORT ?? "3000";
+  PORT = 80;
+
+warning(process.env.PORT);
 
 c("========================================");
 
 createServer((req, res) => {
-  if (req.url?.slice(2, 5) === "api") {
+  let timed;
+  if ((timed = req.url?.slice(2, 5) === "api")) {
     c("api");
-    // console.table(getJson(req));
+    const response = async () => {
+      await api.getJson(req, res);
+    };
+
     res.end();
     return;
   }

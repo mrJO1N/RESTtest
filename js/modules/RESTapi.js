@@ -16,6 +16,4 @@ class ClientApi {
             .end(JSON.stringify(objToSend));
     }
 }
-export const api = {
-    client: new ClientApi(),
-};
+export const api = new ClientApi();

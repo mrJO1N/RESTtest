@@ -1,13 +1,19 @@
-import { c, error, extToCT, PathDir } from "./modules/axuality.js";
+import { api } from "./modules/RESTapi.js";
+import { c, error, extToCT, PathDir, warning } from "./modules/axuality.js";
 import { readFile } from "./modules/patchOfFuncs.js";
 import { createServer } from "http";
 import { extname } from "path";
 const pathDir = new PathDir("general-front", "axuality/special-aliases.json", "pages");
-const HOSTNAME = process.env.HOSTNAME ?? "localhost", PORT = process.env.PORT ?? "3000";
+const HOSTNAME = process.env.HOSTNAME ?? "localhost", PORT = 80;
+warning(process.env.PORT);
 c("========================================");
 createServer((req, res) => {
-    if (req.url?.slice(2, 5) === "api") {
+    let timed;
+    if ((timed = req.url?.slice(2, 5) === "api")) {
         c("api");
+        const response = async () => {
+            await api.getJson(req, res);
+        };
         res.end();
         return;
     }

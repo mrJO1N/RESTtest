@@ -53,7 +53,7 @@ export class PathDir {
   /**
    * this func return path of request file in file system with more request
    *
-   * @param {string} url url from responce
+   * @param {string} url request.url
    * @returns {string} path of file
    *
    */
@@ -78,14 +78,14 @@ export class PathDir {
         break;
 
       default:
-        if (url?.match(".")) {
+        if (!url?.match(".")) {
           this.setAsDefault({ pagePath: url });
         } else {
           this.filePath = url ?? this.filePath;
         }
     }
 
-    // warning(`getf: ${url} | ${this.pagePath} | ${this.filePath}\n`);
+    warning(`getf: ${url} | ${this.pagePath} | ${this.filePath}\n`);
     return `./${this.pagesPath}${this.pagePath}${this.filePath}`;
   }
 }

@@ -37,13 +37,14 @@ export class PathDir {
                 error("getFile: url is undefined");
                 break;
             default:
-                if (url?.match(".")) {
+                if (!url?.match(".")) {
                     this.setAsDefault({ pagePath: url });
                 }
                 else {
                     this.filePath = url ?? this.filePath;
                 }
         }
+        warning(`getf: ${url} | ${this.pagePath} | ${this.filePath}\n`);
         return `./${this.pagesPath}${this.pagePath}${this.filePath}`;
     }
 }
