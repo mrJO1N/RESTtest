@@ -1,4 +1,5 @@
 import { readFileSync } from "fs";
+im;
 import chalk from "chalk";
 const { red, blue, yellow } = chalk;
 export const c = (...text) => console.log(blue(...text)), error = (...text) => console.error(red(...text)), warning = (...text) => console.log(yellow(...text));
@@ -37,7 +38,7 @@ export class PathDir {
                 error("getFile: url is undefined");
                 break;
             default:
-                if (!url?.match(".")) {
+                if (path.extname(url)) {
                     this.setAsDefault({ pagePath: url });
                 }
                 else {

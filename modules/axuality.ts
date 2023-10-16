@@ -1,6 +1,7 @@
 import { defaultPathDir_T, extToCT_T, spAliaces_I } from "./modulesTypes.js";
 
 import { readFileSync } from "fs";
+import { extname } from "path";
 import chalk from "chalk";
 const { red, blue, yellow } = chalk;
 
@@ -78,7 +79,7 @@ export class PathDir {
         break;
 
       default:
-        if (!url?.match(".")) {
+        if (extname(url) == "") {
           this.setAsDefault({ pagePath: url });
         } else {
           this.filePath = url ?? this.filePath;
