@@ -86,7 +86,7 @@ export class PathDir {
         }
     }
 
-    warning(`getf: ${url} | ${this.pagePath} | ${this.filePath}\n`);
+    // warning(`getf: ${url} | ${this.pagePath} | ${this.filePath}\n`);
     return `./${this.pagesPath}${this.pagePath}${this.filePath}`;
   }
 }
